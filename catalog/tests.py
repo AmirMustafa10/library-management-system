@@ -89,8 +89,9 @@ class SeedBooksCommandTests(TestCase):
 
 
 class CatalogPageTests(TestCase):
-    def test_catalog_page_loads_books_with_base_template(self):
-        Book.objects.create(
+    @classmethod
+    def setUpTestData(cls):
+        cls.clean_code = Book.objects.create(
             title="Clean Code",
             author="Robert C. Martin",
             isbn="9780132350884",
@@ -98,6 +99,16 @@ class CatalogPageTests(TestCase):
             total_copies=4,
             available_copies=4,
         )
+        cls.python_crash_course = Book.objects.create(
+            title="Python Crash Course",
+            author="Eric Matthes",
+            isbn="9781718502703",
+            category="Programming",
+            total_copies=5,
+            available_copies=5,
+        )
+
+    def test_catalog_page_loads_books_with_base_template(self):
 
         response = self.client.get("/")
 
@@ -105,3 +116,32 @@ class CatalogPageTests(TestCase):
         self.assertTemplateUsed(response, "base.html")
         self.assertContains(response, "Clean Code")
         self.assertContains(response, "Robert C. Martin")
+
+    def test_catalog_search_filters_books_by_title(self):
+        response = self.client.get("/", {"q": "clean"})
+
+        self.assertEqual(response.status_code, 200)
+        self.assertQuerySetEqual(response.context["books"], [self.clean_code])
+        self.assertContains(response, 'value="clean"')
+        self.assertNotContains(response, "Python Crash Course")
+
+    def test_catalog_search_filters_books_by_author(self):
+        response = self.client.get("/", {"q": "matthes"})
+
+        self.assertQuerySetEqual(
+            response.context["books"], [self.python_crash_course]
+        )
+        self.assertNotContains(response, "Clean Code")
+
+    def test_catalog_search_ignores_surrounding_whitespace(self):
+        response = self.client.get("/", {"q": "  clean  "})
+
+        self.assertEqual(response.context["query"], "clean")
+        self.assertQuerySetEqual(response.context["books"], [self.clean_code])
+
+    def test_catalog_search_shows_empty_state_for_no_matches(self):
+        response = self.client.get("/", {"q": "nonexistent title"})
+
+        self.assertQuerySetEqual(response.context["books"], [])
+        self.assertContains(response, "No matching books")
+        self.assertContains(response, "View all books")
