@@ -27,14 +27,14 @@
         <tbody>
             {% for loan in loans %}
                 <tr>
-                    <td>{{ loan.book_title }}</td>
-                    <td>{{ loan.author }}</td>
-                    <td>{{ loan.borrow_date }}</td>
-                    <td><span class="status status-placeholder">{{ loan.status }}</span></td>
+                    <td data-label="Book">{{ loan.book_title }}</td>
+                    <td data-label="Author">{{ loan.author }}</td>
+                    <td data-label="Borrow Date">{{ loan.borrow_date }}</td>
+                    <td data-label="Status"><span class="status status-placeholder">{{ loan.status }}</span></td>
                 </tr>
             {% empty %}
                 <tr>
-                    <td colspan="4">No current loans are available yet.</td>
+                    <td class="no-loans" colspan="4">No current loans are available yet.</td>
                 </tr>
             {% endfor %}
         </tbody>

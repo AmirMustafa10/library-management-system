@@ -15,9 +15,21 @@
                 <span>Library Management System</span>
             </a>
             <div class="nav-links">
-                <a href="{% url 'catalog:book_list' %}">Catalog</a>
-                <a href="{% url 'loans:my_loans' %}">My Loans</a>
-                <a href="{% url 'admin:index' %}">Admin</a>
+                <a
+                    href="{% url 'catalog:book_list' %}"
+                    class="{% if request.resolver_match.namespace == 'catalog' %}is-active{% endif %}"
+                    {% if request.resolver_match.namespace == 'catalog' %}aria-current="page"{% endif %}
+                >Catalog</a>
+                <a
+                    href="{% url 'loans:my_loans' %}"
+                    class="{% if request.resolver_match.namespace == 'loans' %}is-active{% endif %}"
+                    {% if request.resolver_match.namespace == 'loans' %}aria-current="page"{% endif %}
+                >My Loans</a>
+                <a
+                    href="{% url 'admin:index' %}"
+                    class="{% if request.resolver_match.namespace == 'admin' %}is-active{% endif %}"
+                    {% if request.resolver_match.namespace == 'admin' %}aria-current="page"{% endif %}
+                >Admin</a>
             </div>
         </nav>
     </header>
