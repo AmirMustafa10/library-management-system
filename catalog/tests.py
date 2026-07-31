@@ -86,3 +86,22 @@ class SeedBooksCommandTests(TestCase):
 
         self.assertEqual(first_count, 5)
         self.assertEqual(second_count, 5)
+
+
+class CatalogPageTests(TestCase):
+    def test_catalog_page_loads_books_with_base_template(self):
+        Book.objects.create(
+            title="Clean Code",
+            author="Robert C. Martin",
+            isbn="9780132350884",
+            category="Software Engineering",
+            total_copies=4,
+            available_copies=4,
+        )
+
+        response = self.client.get("/")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "base.html")
+        self.assertContains(response, "Clean Code")
+        self.assertContains(response, "Robert C. Martin")

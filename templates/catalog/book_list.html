@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Catalog | Library Management System{% endblock %}
+
+{% block content %}
+<section class="page-heading" aria-labelledby="catalog-title">
+    <div>
+        <p class="eyebrow">Book Catalog</p>
+        <h1 id="catalog-title">Available Library Titles</h1>
+    </div>
+    <div class="catalog-summary">
+        <span>{{ books|length }}</span>
+        <small>titles loaded</small>
+    </div>
+</section>
+
+<section class="toolbar" aria-label="Catalog controls">
+    <label class="search-field">
+        <span>Search</span>
+        <input type="search" name="q" placeholder="Title or author">
+    </label>
+</section>
+
+<section class="book-grid" aria-label="Book list">
+    {% for book in books %}
+        <article class="book-card">
+            <div class="book-card-main">
+                <p class="book-category">{{ book.category }}</p>
+                <h2>{{ book.title }}</h2>
+                <p class="book-author">{{ book.author }}</p>
+            </div>
+            <dl class="book-meta">
+                <div>
+                    <dt>ISBN</dt>
+                    <dd>{{ book.isbn }}</dd>
+                </div>
+                <div>
+                    <dt>Total</dt>
+                    <dd>{{ book.total_copies }}</dd>
+                </div>
+                <div>
+                    <dt>Available</dt>
+                    <dd>{{ book.available_copies }}</dd>
+                </div>
+            </dl>
+            {% if book.is_available %}
+                <span class="status status-available">Available</span>
+            {% else %}
+                <span class="status status-unavailable">Unavailable</span>
+            {% endif %}
+        </article>
+    {% empty %}
+        <div class="empty-state">
+            <h2>No books yet</h2>
+            <p>Add books through Django Admin, then run the catalog again.</p>
+        </div>
+    {% endfor %}
+</section>
+{% endblock %}

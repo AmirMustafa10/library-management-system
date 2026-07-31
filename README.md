@@ -1,6 +1,6 @@
 # Library Management System
 
-A Django-based Library Management System built from the provided SRS. This branch implements Task #2: Backend Models & Admin for the Book Catalog (FR-2).
+A Django-based Library Management System built from the provided SRS. The merged baseline includes Task #2, and this branch implements Task #4: front-end templates and CSS.
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ A Django-based Library Management System built from the provided SRS. This branc
 ## Setup
 
 ```bash
-git clone https://github.com/ESLAMAHMED232/library-management-system.git
+git clone https://github.com/magedhara251-bot/library-management-system.git
 cd library-management-system
 python -m venv .venv
 .venv\Scripts\activate
@@ -32,7 +32,13 @@ On macOS or Linux, activate the virtual environment with:
 source .venv/bin/activate
 ```
 
-## Task #2 Scope
+Open the app at:
+
+- Catalog: http://127.0.0.1:8000/
+- My Loans placeholder page: http://127.0.0.1:8000/loans/my/
+- Django Admin: http://127.0.0.1:8000/admin/
+
+## Implemented Scope
 
 Implemented:
 
@@ -41,12 +47,16 @@ Implemented:
 - Model validation and database constraints to prevent invalid copy counts.
 - Django Admin registration for catalog management.
 - Sample book seed command.
+- Base template and navigation.
+- Catalog page template with styled book cards.
+- My Loans page template with placeholder data until FR-3 is implemented.
+- Shared CSS for layout, cards, tables, and responsive behavior.
 
 Not implemented in this branch:
 
 - Authentication views and templates.
 - Borrowing and returning logic.
-- Catalog templates, CSS, or JavaScript filtering.
+- JavaScript filtering.
 - Custom librarian dashboard.
 
 ## Useful Commands
