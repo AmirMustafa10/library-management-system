@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}My Loans | Library Management System{% endblock %}
+
+{% block content %}
+<section class="page-heading" aria-labelledby="loans-title">
+    <div>
+        <p class="eyebrow">Member Area</p>
+        <h1 id="loans-title">My Loans</h1>
+    </div>
+    <div class="catalog-summary">
+        <span>{{ loans|length }}</span>
+        <small>placeholder rows</small>
+    </div>
+</section>
+
+<section class="table-panel" aria-label="Current loans">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Book</th>
+                <th scope="col">Author</th>
+                <th scope="col">Borrow Date</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for loan in loans %}
+                <tr>
+                    <td data-label="Book">{{ loan.book_title }}</td>
+                    <td data-label="Author">{{ loan.author }}</td>
+                    <td data-label="Borrow Date">{{ loan.borrow_date }}</td>
+                    <td data-label="Status"><span class="status status-placeholder">{{ loan.status }}</span></td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td class="no-loans" colspan="4">No current loans are available yet.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

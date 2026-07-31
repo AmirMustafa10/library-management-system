@@ -1,0 +1,49 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Library Management System{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="Primary navigation">
+            <a class="brand" href="{% url 'catalog:book_list' %}">
+                <span class="brand-mark" aria-hidden="true">L</span>
+                <span>Library Management System</span>
+            </a>
+            <div class="nav-links">
+                <a
+                    href="{% url 'catalog:book_list' %}"
+                    class="{% if request.resolver_match.namespace == 'catalog' %}is-active{% endif %}"
+                    {% if request.resolver_match.namespace == 'catalog' %}aria-current="page"{% endif %}
+                >Catalog</a>
+                <a
+                    href="{% url 'loans:my_loans' %}"
+                    class="{% if request.resolver_match.namespace == 'loans' %}is-active{% endif %}"
+                    {% if request.resolver_match.namespace == 'loans' %}aria-current="page"{% endif %}
+                >My Loans</a>
+                <a
+                    href="{% url 'admin:index' %}"
+                    class="{% if request.resolver_match.namespace == 'admin' %}is-active{% endif %}"
+                    {% if request.resolver_match.namespace == 'admin' %}aria-current="page"{% endif %}
+                >Admin</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-shell">
+        {% if messages %}
+            <div class="messages" aria-live="polite">
+                {% for message in messages %}
+                    <p class="message message-{{ message.tags }}">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Catalog | Library Management System{% endblock %}
+
+{% block content %}
+<section class="page-heading" aria-labelledby="catalog-title">
+    <div>
+        <p class="eyebrow">Book Catalog</p>
+        <h1 id="catalog-title">Library collection</h1>
+    </div>
+    <div class="catalog-summary">
+        <span>{{ books|length }}</span>
+        <small>{% if query %}matching titles{% else %}titles in catalog{% endif %}</small>
+    </div>
+</section>
+
+<form class="catalog-toolbar" method="get" role="search">
+    <label class="search-label" for="catalog-search">Search catalog</label>
+    <div class="search-row">
+        <div class="search-control">
+            <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-4-4"></path>
+            </svg>
+            <input
+                id="catalog-search"
+                type="search"
+                name="q"
+                value="{{ query }}"
+                placeholder="Enter a title or author"
+                autocomplete="off"
+            >
+        </div>
+        <button class="search-button" type="submit">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-4-4"></path>
+            </svg>
+            <span>Search</span>
+        </button>
+        {% if query %}
+            <a class="clear-search" href="{% url 'catalog:book_list' %}">Clear</a>
+        {% endif %}
+    </div>
+</form>
+
+<section class="book-grid" aria-label="Book list">
+    {% for book in books %}
+        <article class="book-card">
+            <div class="book-cover" aria-hidden="true">
+                <span>{{ book.title|first }}</span>
+            </div>
+            <div class="book-card-content">
+                <div class="book-card-top">
+                    <p class="book-category">{{ book.category }}</p>
+                    {% if book.is_available %}
+                        <span class="status status-available">Available</span>
+                    {% else %}
+                        <span class="status status-unavailable">Unavailable</span>
+                    {% endif %}
+                </div>
+                <div class="book-card-main">
+                    <h2>{{ book.title }}</h2>
+                    <p class="book-author">{{ book.author }}</p>
+                </div>
+                <dl class="book-meta">
+                    <div>
+                        <dt>ISBN</dt>
+                        <dd>{{ book.isbn }}</dd>
+                    </div>
+                    <div>
+                        <dt>Total</dt>
+                        <dd>{{ book.total_copies }}</dd>
+                    </div>
+                    <div>
+                        <dt>Available</dt>
+                        <dd>{{ book.available_copies }}</dd>
+                    </div>
+                </dl>
+            </div>
+        </article>
+    {% empty %}
+        <div class="empty-state">
+            {% if query %}
+                <h2>No matching books</h2>
+                <p>No titles or authors match “{{ query }}”.</p>
+                <a class="empty-state-link" href="{% url 'catalog:book_list' %}">View all books</a>
+            {% else %}
+                <h2>No books yet</h2>
+                <p>Add books through Django Admin, then return to the catalog.</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+</section>
+{% endblock %}
