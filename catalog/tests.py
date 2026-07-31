@@ -1,6 +1,7 @@
 from io import StringIO
 
 from django.contrib import admin
+from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from django.core.management import call_command
 from django.db import IntegrityError, transaction
@@ -59,6 +60,19 @@ class BookModelTests(TestCase):
 class BookAdminTests(TestCase):
     def test_book_is_registered_with_custom_admin(self):
         self.assertIsInstance(admin.site._registry[Book], BookAdmin)
+
+    def test_admin_book_pages_load_for_superuser(self):
+        user = get_user_model().objects.create_superuser(
+            username="admin",
+            email="admin@example.com",
+            password="TempPass12345!",
+        )
+
+        self.client.force_login(user)
+
+        self.assertEqual(self.client.get("/admin/").status_code, 200)
+        self.assertEqual(self.client.get("/admin/catalog/book/").status_code, 200)
+        self.assertEqual(self.client.get("/admin/catalog/book/add/").status_code, 200)
 
 
 class SeedBooksCommandTests(TestCase):
