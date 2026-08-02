@@ -1,6 +1,10 @@
-# Library Management System
+# 📚 Library Management System
 
-A Django-based Library Management System built from the provided SRS. The merged baseline includes Task #2, and this branch implements Task #4: front-end templates and CSS.
+A full-stack web application built with **Django** that enables library members to browse books, borrow available copies, return borrowed books, and manage their active loans. The project also provides an administrative interface for librarians using Django Admin to manage the catalog and monitor loan records.
+
+This project was developed as a team-based academic project following the Software Requirements Specification (SRS), focusing on Django's MVT architecture, authentication, database relationships, and business logic.
+
+---
 
 ## Prerequisites
 
@@ -10,61 +14,274 @@ A Django-based Library Management System built from the provided SRS. The merged
 - SQLite, included with Python, for local development
 - A virtual environment created with `python -m venv`
 
-## Setup
+---
+
+# ✨ Features
+
+## 👤 Authentication
+
+* User registration
+* Secure login & logout
+* Password hashing using Django Authentication
+* Form validation
+
+---
+
+## 📖 Book Catalog
+
+* Browse all available books
+* Search books by title 
+* View book details
+* Display available books
+
+---
+
+## 📚 Borrow & Return System
+
+* Borrow books when copies are available
+* Prevent borrowing unavailable books
+* Prevent borrowing the same book twice simultaneously
+* Return borrowed books
+
+---
+
+## 📋 My Loans
+
+* View all currently borrowed books
+* Track borrowing status
+* Return books 
+
+---
+
+## 🔧 Admin Panel
+
+Powered by Django Admin.
+
+Administrators can:
+
+* Add books
+* Edit books
+* Delete books
+* Manage categories
+* Monitor active loans
+* Manage users
+
+---
+
+# 🛠️ Tech Stack
+
+### Backend
+
+* Python
+* Django
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+
+### Database
+
+* SQLite
+
+### Authentication
+
+* Django Authentication System
+
+---
+
+# 🗂️ Project Structure
+
+```text
+library_management/
+│
+├── accounts/
+│   ├── authentication
+│   ├── signup
+│   └── login
+│
+├── catalog/
+│   ├── books
+│   ├── categories
+│   └── search
+│
+├── loans/
+│   ├── borrow
+│   ├── return
+│   └── my loans
+│
+├── templates/
+├── static/
+├── media/
+└── manage.py
+```
+
+---
+
+# 🗃️ Database Design
+
+## User
+
+Uses Django's built-in User model.
+
+---
+
+## Book
+
+* Title
+* Author
+* ISBN
+* Category
+* Total Copies
+* Available Copies
+
+---
+
+## Loan
+
+* Member
+* Book
+* Borrow Date
+* Return Date
+* Status
+
+---
+
+# 🔄 Application Workflow
+
+```text
+User Registration
+        │
+        ▼
+      Login
+        │
+        ▼
+ Browse Catalog
+        │
+        ▼
+ Search Books
+        │
+        ▼
+ Borrow Book
+        │
+        ▼
+ Loan Created
+        │
+        ▼
+ Available Copies Updated
+        │
+        ▼
+ View My Loans
+        │
+        ▼
+ Return Book
+        │
+        ▼
+ Available Copies Increased
+```
+
+---
+
+# 🔐 Business Rules
+
+* Only authenticated users can borrow books.
+* Books cannot be borrowed if no copies are available.
+* A user cannot borrow the same book twice before returning it.
+* Returning a book immediately updates the available copies.
+* Passwords are securely hashed using Django Authentication.
+* Only administrators have access to Django Admin.
+
+---
+
+# 🚀 Getting Started
+
+## Clone the repository
 
 ```bash
-git clone https://github.com/magedhara251-bot/library-management-system.git
+git clone https://github.com/your-username/library-management-system.git
 cd library-management-system
-python -m venv .venv
-.venv\Scripts\activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-copy .env.example .env
+```
+
+## Create virtual environment
+
+```bash
+python -m venv venv
+```
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+---
+
+## Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Apply migrations
+
+```bash
 python manage.py migrate
-python manage.py seed_books
+```
+
+---
+
+## Create Superuser
+
+```bash
 python manage.py createsuperuser
+```
+
+---
+
+## Run the server
+
+```bash
 python manage.py runserver
 ```
 
-On macOS or Linux, activate the virtual environment with:
+Visit:
 
-```bash
-source .venv/bin/activate
+```
+http://127.0.0.1:8000/
 ```
 
-Open the app at:
+Admin Panel:
 
-- Catalog: http://127.0.0.1:8000/
-- My Loans placeholder page: http://127.0.0.1:8000/loans/my/
-- Django Admin: http://127.0.0.1:8000/admin/
-
-## Implemented Scope
-
-Implemented:
-
-- Clean Django project scaffold with `accounts`, `catalog`, and `loans` apps.
-- `Book` model with title, author, ISBN, category, total copies, and available copies.
-- Model validation and database constraints to prevent invalid copy counts.
-- Django Admin registration for catalog management.
-- Sample book seed command.
-- Base template and navigation.
-- Catalog page template with styled book cards.
-- My Loans page template with placeholder data until FR-3 is implemented.
-- Shared CSS for layout, cards, tables, and responsive behavior.
-
-Not implemented in this branch:
-
-- Authentication views and templates.
-- Borrowing and returning logic.
-- JavaScript filtering.
-- Custom librarian dashboard.
-
-## Useful Commands
-
-```bash
-python manage.py makemigrations
-python manage.py migrate
-python manage.py seed_books
-python manage.py test
-python manage.py runserver
 ```
+http://127.0.0.1:8000/admin/
+```
+
+
+---
+
+
+# 🤝 Team
+
+Developed as part of a collaborative academic project using Git and GitHub workflow.
+* Amir Mostafa
+* Mohamed Osama 
+* AbdElrhman Mohamed
+* Sarah Maged
+* Mina Mary 
+* Merolla Mehab 
+
+---
+
+# 📄 License
+
+This project is intended for educational purposes.
+
