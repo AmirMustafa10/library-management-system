@@ -21,21 +21,21 @@
                     {% if request.resolver_match.namespace == 'catalog' %}aria-current="page"{% endif %}
                 >Catalog</a>
                 <a
-                    href="{% url 'loans:my_loans' %}"
+                    href="{% url 'my_loans' %}"
                     class="{% if request.resolver_match.namespace == 'loans' %}is-active{% endif %}"
                     {% if request.resolver_match.namespace == 'loans' %}aria-current="page"{% endif %}
                 >My Loans</a>
-                <a
-                    href="{% url 'admin:index' %}"
-                    class="{% if request.resolver_match.namespace == 'admin' %}is-active{% endif %}"
-                    {% if request.resolver_match.namespace == 'admin' %}aria-current="page"{% endif %}
-                >Admin</a>
                  {% if user.is_authenticated %}
         <form method="post" action="{% url 'accounts:logout' %}" style="display:inline;">
             {% csrf_token %}
             <button type="submit" class="nav-logout-button">Log out</button>
         </form>
     {% else %}
+        <a
+            href="{% url 'admin:index' %}"
+            class="{% if request.resolver_match.namespace == 'admin' %}is-active{% endif %}"
+            {% if request.resolver_match.namespace == 'admin' %}aria-current="page"{% endif %}
+        >Admin</a>
         <a href="{% url 'accounts:login' %}">Log in</a>
         <a href="{% url 'accounts:signup' %}">Sign up</a>
     {% endif %}
