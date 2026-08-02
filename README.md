@@ -30,7 +30,7 @@ This project was developed as a team-based academic project following the Softwa
 ## 📖 Book Catalog
 
 * Browse all available books
-* Search books by title 
+* Search books by title or author
 * View book details
 * Display available books
 
