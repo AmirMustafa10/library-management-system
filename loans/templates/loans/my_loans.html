@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Loans</title>
+</head>
+<body>
+
+<h1>My Borrowed Books</h1>
+
+{% if messages %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+{% if loans %}
+
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Borrow Date</th>
+        <th>Action</th>
+    </tr>
+
+    {% for loan in loans %}
+    <tr>
+        <td>{{ loan.book.title }}</td>
+        <td>{{ loan.borrow_date }}</td>
+        <td>
+            <form method="post" action="{% url 'return_book' loan.id %}">
+                {% csrf_token %}
+                <button type="submit">Return</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% else %}
+
+<p>You have no borrowed books.</p>
+
+{% endif %}
+
+</body>
+</html>

@@ -27,8 +27,8 @@
         <tbody>
             {% for loan in loans %}
                 <tr>
-                    <td data-label="Book">{{ loan.book_title }}</td>
-                    <td data-label="Author">{{ loan.author }}</td>
+                    <td data-label="Book">{{ loan.book.title }}</td>
+                    <td data-label="Author">{{ loan.book.author }}</td>
                     <td data-label="Borrow Date">{{ loan.borrow_date }}</td>
                     <td data-label="Status"><span class="status status-placeholder">{{ loan.status }}</span></td>
                 </tr>
