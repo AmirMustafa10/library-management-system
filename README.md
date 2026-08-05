@@ -199,7 +199,7 @@ User Registration
 ## Clone the repository
 
 ```bash
-git clone https://github.com/your-username/library-management-system.git](https://github.com/AmirMustafa10/library-management-system.git
+git clone https://github.com/AmirMustafa10/library-management-system.git
 cd library-management-system
 ```
 
