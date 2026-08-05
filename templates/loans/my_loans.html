@@ -22,6 +22,7 @@
                 <th scope="col">Author</th>
                 <th scope="col">Borrow Date</th>
                 <th scope="col">Status</th>
+                <th scope="col">Return</th>
             </tr>
         </thead>
         <tbody>
@@ -31,6 +32,16 @@
                     <td data-label="Author">{{ loan.book.author }}</td>
                     <td data-label="Borrow Date">{{ loan.borrow_date }}</td>
                     <td data-label="Status"><span class="status status-placeholder">{{ loan.status }}</span></td>
+                    <td data-label="Status">
+                        <form action="{% url 'return_book' loan.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="btn return-btn" 
+                                style="background: #416f91; color: white; border: none; border-radius: 6px; padding: 10px 18px;"
+                                >
+                                Return Book
+                            </button>
+                        </form>
+                    </td>
                 </tr>
             {% empty %}
                 <tr>
