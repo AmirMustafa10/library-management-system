@@ -41,6 +41,24 @@ class Book(models.Model):
             raise ValidationError(
                 {"available_copies": "Available copies cannot exceed total copies."}
             )
+        if self.total_copies <= 0:
+            raise ValidationError(
+                {"total_copies": "Total copies must be greater than 0."}
+            )
+        if self.available_copies < 0:
+            raise ValidationError(
+                {"available_copies": "Available copies cannot be negative."}
+            )
+        if self.available_copies <= 0:
+            raise ValidationError({"book": "This book is currently unavailable."})
+
+        if self.isbn:
+            exists = (
+                Book.objects.filter(isbn=self.isbn.strip()).exclude(pk=self.pk).exists()
+            )
+
+            if exists:
+                raise ValidationError({"isbn": "A book with this ISBN already exists."})
 
     @property
     def is_available(self):
