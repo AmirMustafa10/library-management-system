@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Library Management System{% endblock %}
+
+{% block content %}
+<section class="hero text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Library Management System</h1>
+        <p class="lead">Browse books, borrow available copies and manage your loans with ease.</p>
+        <a href="{% url 'accounts:signup' %}" class="btn btn-warning btn-lg me-2">Get Started</a>
+        <a href="{% url 'accounts:login' %}" class="btn btn-outline-light btn-lg">Login</a>
+    </div>
+</section>
+
+<section class="container py-5">
+    <div class="row g-4">
+        <div class="col-md-3">
+            <div class="card feature h-100 text-center p-4">
+                <i class="bi bi-book fs-1 text-primary"></i>
+                <h4>Browse Books</h4>
+                <p>Explore the library catalog.</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card feature h-100 text-center p-4">
+                <i class="bi bi-journal-check fs-1 text-success"></i>
+                <h4>Borrow</h4>
+                <p>Borrow available books instantly.</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card feature h-100 text-center p-4">
+                <i class="bi bi-arrow-repeat fs-1 text-warning"></i>
+                <h4>Return</h4>
+                <p>Return books with one click.</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card feature h-100 text-center p-4">
+                <i class="bi bi-person-lines-fill fs-1 text-danger"></i>
+                <h4>My Loans</h4>
+                <p>Track your borrowed books.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light py-5">
+    <div class="container text-center">
+        <h2>How It Works</h2>
+        <div class="row mt-4">
+            <div class="col">Create Account</div>
+            <div class="col">Login</div>
+            <div class="col">Search</div>
+            <div class="col">Borrow</div>
+            <div class="col">Return</div>
+        </div>
+    </div>
+</section>
+{% endblock %}
