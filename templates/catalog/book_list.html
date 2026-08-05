@@ -77,6 +77,39 @@
                         <dd>{{ book.available_copies }}</dd>
                     </div>
                 </dl>
+                <br>
+                <dl>
+                    <div class="book-card-actions">
+                        {% if book.available_copies > 0 %}
+
+                            <form
+                                action="{% url 'borrow_book' book.id %}"
+                                method="POST"
+                            >
+                                {% csrf_token %}
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary borrow-btn"
+                                >
+                                    Borrow Book
+                                </button>
+                            </form>
+                        
+                        {% else %}
+                        
+                            <button
+                                type="button"
+                                class="btn btn-disabled"
+                                disabled
+                            >
+                                Unavailable
+                            </button>
+                        
+                        {% endif %}
+                        
+                    </div>
+                </dl>
             </div>
         </article>
     {% empty %}
