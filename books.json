@@ -1,0 +1,394 @@
+[
+{
+    "model": "catalog.book",
+    "pk": 10,
+    "fields": {
+        "title": "A Clockwork Orange",
+        "author": "Anthony Burgess",
+        "isbn": "9780393341768",
+        "category": "Dystopian",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T21:13:52.775Z",
+        "updated_at": "2026-08-06T21:43:26.564Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 3,
+    "fields": {
+        "title": "Animal Farm",
+        "author": "George Orwell",
+        "isbn": "9780451526342",
+        "category": "Dystopian",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T21:07:48.479Z",
+        "updated_at": "2026-08-06T21:22:28.151Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 26,
+    "fields": {
+        "title": "Artificial Intelligence: A Modern Approach",
+        "author": "Stuart Russell, Peter Norvig",
+        "isbn": "9780134610993",
+        "category": "Artificial Intelligence",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T22:07:22.111Z",
+        "updated_at": "2026-08-06T22:07:22.111Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 21,
+    "fields": {
+        "title": "Automate the Boring Stuff with Python",
+        "author": "Al Sweigart",
+        "isbn": "9781593279929",
+        "category": "Automation",
+        "total_copies": 1,
+        "available_copies": 0,
+        "created_at": "2026-08-06T22:04:47.988Z",
+        "updated_at": "2026-08-06T22:05:14.267Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 16,
+    "fields": {
+        "title": "Clean Code",
+        "author": "Robert C. Martin",
+        "isbn": "9780132350884",
+        "category": "Programming",
+        "total_copies": 1,
+        "available_copies": 0,
+        "created_at": "2026-08-06T22:03:04.864Z",
+        "updated_at": "2026-08-06T22:03:04.864Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 27,
+    "fields": {
+        "title": "Deep Learning",
+        "author": "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
+        "isbn": "9780262035613",
+        "category": "Artificial Intelligence",
+        "total_copies": 1,
+        "available_copies": 0,
+        "created_at": "2026-08-06T22:07:47.742Z",
+        "updated_at": "2026-08-06T22:07:47.742Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 18,
+    "fields": {
+        "title": "Design Patterns",
+        "author": "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
+        "isbn": "9780201633610",
+        "category": "Design Patterns",
+        "total_copies": 1,
+        "available_copies": 0,
+        "created_at": "2026-08-06T22:03:49.271Z",
+        "updated_at": "2026-08-06T22:03:49.271Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 24,
+    "fields": {
+        "title": "Django for Beginners",
+        "author": "William S. Vincent",
+        "isbn": "9781735467207",
+        "category": "Web Development",
+        "total_copies": 1,
+        "available_copies": 0,
+        "created_at": "2026-08-06T22:06:18.043Z",
+        "updated_at": "2026-08-06T22:06:18.043Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 7,
+    "fields": {
+        "title": "Dracula",
+        "author": "Bram Stoker",
+        "isbn": "9780393970128",
+        "category": "Horror",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T21:11:05.656Z",
+        "updated_at": "2026-08-06T21:23:15.020Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 23,
+    "fields": {
+        "title": "Effective Python",
+        "author": "Brett Slatkin",
+        "isbn": "9780138172455",
+        "category": "Programming",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T22:05:50.635Z",
+        "updated_at": "2026-08-06T22:05:50.635Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 8,
+    "fields": {
+        "title": "Ender’s Game",
+        "author": "Orson Scott Card",
+        "isbn": "9780812550702",
+        "category": "ScienceFiction",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T21:11:52.383Z",
+        "updated_at": "2026-08-06T22:01:57.512Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 22,
+    "fields": {
+        "title": "Fluent Python",
+        "author": "Luciano Ramalho",
+        "isbn": "9781492056355",
+        "category": "Programming",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T22:05:31.294Z",
+        "updated_at": "2026-08-06T22:05:31.294Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 11,
+    "fields": {
+        "title": "Great Expectations",
+        "author": "Charles Dickens",
+        "isbn": "9780192833594",
+        "category": "Classic",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T21:14:39.527Z",
+        "updated_at": "2026-08-06T22:01:28.850Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 28,
+    "fields": {
+        "title": "Grokking Algorithms",
+        "author": "Aditya Bhargava",
+        "isbn": "9781617292231",
+        "category": "Algorithms / Computer Science",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T22:08:13.714Z",
+        "updated_at": "2026-08-06T22:08:13.714Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 29,
+    "fields": {
+        "title": "Introduction to Algorithms",
+        "author": "Thomas H. Cormen et al.",
+        "isbn": "9780262046305",
+        "category": "Algorithms / Computer Science",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T22:08:26.399Z",
+        "updated_at": "2026-08-06T22:08:26.399Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 15,
+    "fields": {
+        "title": "It",
+        "author": "Stephen King",
+        "isbn": "9780450411434",
+        "category": "Horror",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T21:18:36.547Z",
+        "updated_at": "2026-08-06T22:00:32.039Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 1,
+    "fields": {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "isbn": "9781441341709",
+        "category": "Romance",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T21:05:50.966Z",
+        "updated_at": "2026-08-06T21:22:01.517Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 20,
+    "fields": {
+        "title": "Python Crash Course",
+        "author": "Eric Matthes",
+        "isbn": "9781718502703",
+        "category": "Programming",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T22:04:27.814Z",
+        "updated_at": "2026-08-06T22:04:27.814Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 19,
+    "fields": {
+        "title": "Refactoring",
+        "author": "Martin Fowler",
+        "isbn": "9780134757599",
+        "category": "Refactoring",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T22:04:07.420Z",
+        "updated_at": "2026-08-06T22:04:07.420Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 2,
+    "fields": {
+        "title": "The Book Thief",
+        "author": "Markus Zusak",
+        "isbn": "0375831002",
+        "category": "Historical",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T21:06:56.113Z",
+        "updated_at": "2026-08-06T21:22:12.968Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 12,
+    "fields": {
+        "title": "The Elephant Tree",
+        "author": "R.D. Ronald",
+        "isbn": "9781848764569",
+        "category": "Crime",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T21:15:48.204Z",
+        "updated_at": "2026-08-06T22:01:17.471Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 4,
+    "fields": {
+        "title": "The Fault in Our Stars",
+        "author": "John Green",
+        "isbn": "0525478817",
+        "category": "Romance",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T21:08:34.031Z",
+        "updated_at": "2026-08-06T21:22:41.346Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 5,
+    "fields": {
+        "title": "The Giving Tree",
+        "author": "Shel Silverstein",
+        "isbn": "9780060256654",
+        "category": "Children",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T21:09:17.983Z",
+        "updated_at": "2026-08-06T21:22:55.592Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 6,
+    "fields": {
+        "title": "The Help",
+        "author": "Kathryn Stockett",
+        "isbn": "9780399155345",
+        "category": "Historical",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T21:10:21.257Z",
+        "updated_at": "2026-08-06T21:23:04.481Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 17,
+    "fields": {
+        "title": "The Pragmatic Programmer",
+        "author": "David Thomas, Andrew Hunt",
+        "isbn": "9780135957059",
+        "category": "Programming",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T22:03:26.328Z",
+        "updated_at": "2026-08-06T22:03:26.328Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 9,
+    "fields": {
+        "title": "The Time Traveler's Wife",
+        "author": "Audrey Niffenegger",
+        "isbn": "9781939126016",
+        "category": "Romance",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T21:12:37.641Z",
+        "updated_at": "2026-08-06T22:01:44.950Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 13,
+    "fields": {
+        "title": "The Zombie Room",
+        "author": "R.D. Ronald",
+        "isbn": "B01E4L4VEG",
+        "category": "Horror",
+        "total_copies": 1,
+        "available_copies": 1,
+        "created_at": "2026-08-06T21:16:47.248Z",
+        "updated_at": "2026-08-06T22:01:01.598Z"
+    }
+},
+{
+    "model": "catalog.book",
+    "pk": 25,
+    "fields": {
+        "title": "Two Scoops of Django",
+        "author": "Daniel Roy Greenfeld, Audrey Roy Greenfeld",
+        "isbn": "9780981467305",
+        "category": "Web Development",
+        "total_copies": 1,
+        "available_copies": 0,
+        "created_at": "2026-08-06T22:06:35.476Z",
+        "updated_at": "2026-08-06T22:06:35.476Z"
+    }
+}
+]

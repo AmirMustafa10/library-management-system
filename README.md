@@ -20,36 +20,36 @@ This project was developed as a team-based academic project following the Softwa
 
 ## 👤 Authentication
 
-* User registration
-* Secure login & logout
-* Password hashing using Django Authentication
-* Form validation
+- User registration
+- Secure login & logout
+- Password hashing using Django Authentication
+- Form validation
 
 ---
 
 ## 📖 Book Catalog
 
-* Browse all available books
-* Search books by title or author
-* View book details
-* Display available books
+- Browse all available books
+- Search books by title or author
+- View book details
+- Display available books
 
 ---
 
 ## 📚 Borrow & Return System
 
-* Borrow books when copies are available
-* Prevent borrowing unavailable books
-* Prevent borrowing the same book twice simultaneously
-* Return borrowed books
+- Borrow books when copies are available
+- Prevent borrowing unavailable books
+- Prevent borrowing the same book twice simultaneously
+- Return borrowed books
 
 ---
 
 ## 📋 My Loans
 
-* View all currently borrowed books
-* Track borrowing status
-* Return books 
+- View all currently borrowed books
+- Track borrowing status
+- Return books
 
 ---
 
@@ -59,12 +59,12 @@ Powered by Django Admin.
 
 Administrators can:
 
-* Add books
-* Edit books
-* Delete books
-* Manage categories
-* Monitor active loans
-* Manage users
+- Add books
+- Edit books
+- Delete books
+- Manage categories
+- Monitor active loans
+- Manage users
 
 ---
 
@@ -72,22 +72,22 @@ Administrators can:
 
 ### Backend
 
-* Python
-* Django
+- Python
+- Django
 
 ### Frontend
 
-* HTML5
-* CSS3
-* JavaScript
+- HTML5
+- CSS3
+- JavaScript
 
 ### Database
 
-* SQLite
+- SQLite
 
 ### Authentication
 
-* Django Authentication System
+- Django Authentication System
 
 ---
 
@@ -129,22 +129,22 @@ Uses Django's built-in User model.
 
 ## Book
 
-* Title
-* Author
-* ISBN
-* Category
-* Total Copies
-* Available Copies
+- Title
+- Author
+- ISBN
+- Category
+- Total Copies
+- Available Copies
 
 ---
 
 ## Loan
 
-* Member
-* Book
-* Borrow Date
-* Return Date
-* Status
+- Member
+- Book
+- Borrow Date
+- Return Date
+- Status
 
 ---
 
@@ -185,12 +185,12 @@ User Registration
 
 # 🔐 Business Rules
 
-* Only authenticated users can borrow books.
-* Books cannot be borrowed if no copies are available.
-* A user cannot borrow the same book twice before returning it.
-* Returning a book immediately updates the available copies.
-* Passwords are securely hashed using Django Authentication.
-* Only administrators have access to Django Admin.
+- Only authenticated users can borrow books.
+- Books cannot be borrowed if no copies are available.
+- A user cannot borrow the same book twice before returning it.
+- Returning a book immediately updates the available copies.
+- Passwords are securely hashed using Django Authentication.
+- Only administrators have access to Django Admin.
 
 ---
 
@@ -239,6 +239,14 @@ python manage.py migrate
 
 ---
 
+## load book samples
+
+```bash
+python manage.py loaddata books.json
+```
+
+---
+
 ## Create Superuser
 
 ```bash
@@ -265,23 +273,21 @@ Admin Panel:
 http://127.0.0.1:8000/admin/
 ```
 
-
 ---
-
 
 # 🤝 Team
 
 Developed as part of a collaborative academic project using Git and GitHub workflow.
-* Amir Mostafa
-* Mohamed Osama 
-* AbdElrhman Mohamed
-* Sarah Maged
-* Mina Mary 
-* Merolla Mehab 
+
+- Amir Mostafa
+- Mohamed Osama
+- AbdElrhman Mohamed
+- Sarah Maged
+- Mina Mary
+- Merolla Mehab
 
 ---
 
 # 📄 License
 
 This project is intended for educational purposes.
-
