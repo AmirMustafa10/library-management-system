@@ -8,7 +8,7 @@
         <p class="auth-eyebrow">Member access</p>
         <h1>Create an account</h1>
 
-        <form method="post" class="auth-form" id="signUp">
+        <form method="post" class="auth-form" id="signUp"> 
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="auth-button">Sign up</button>

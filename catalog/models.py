@@ -49,8 +49,6 @@ class Book(models.Model):
             raise ValidationError(
                 {"available_copies": "Available copies cannot be negative."}
             )
-        if self.available_copies <= 0:
-            raise ValidationError({"book": "This book is currently unavailable."})
 
         if self.isbn:
             exists = (

@@ -119,7 +119,7 @@ class Loan(models.Model):
 
                     if self.book.available_copies <= 0:
                         raise ValidationError(
-                            {"book": ("This book is currently " "unavailable.")}
+                            {"book": ("This book is currently unavailable.")}
                         )
 
                     self.book.available_copies -= 1
